@@ -13,3 +13,7 @@ matrix:
     - rvm: ruby-head
     - rvm: ruby-head-clang
     - rvm: jruby
+
+branches:
+  only:
+  - gh-pages
