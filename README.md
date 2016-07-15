@@ -1,6 +1,10 @@
 # CV
 _Generate a resumé of your Github activity!  See a live example [here](http://beneills.github.io/cv)._
 
+## Why
+
+In __five minutes__ you can pick out your best public activity on Github, whether commits, pull requests, stats or conversations, and publish this online.  With more time, you can customize your resumé by changing basic HTML, adding whatever else you want to it.
+
 ![Screenshot of resumé](screenshot.png)
 
 
@@ -10,14 +14,14 @@ _Generate a resumé of your Github activity!  See a live example [here](http://b
 # fork repository
 git clone https://github.com/USERNAME/cv
 cd cv
+# apt-get install phantomjs or brew install phantomjs
+bundle install
 edit templates/index.html # or use the default
 rake
 open index.html
 ```
 
 ## Publishing
-
-__TODO__ test this process
 
 ```shell
 # on branch gh-pages
