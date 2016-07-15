@@ -8,10 +8,12 @@ rvm:
 
 matrix:
   allow_failures:
-    - rvm: ruby-head
-    - rvm: ruby-head-clang
+    - rvm: 2.2.5
+    - rvm: 2.3.1
     - rvm: jruby
 
 branches:
   only:
   - gh-pages
+
+script: bundle exec rake test

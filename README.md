@@ -1,9 +1,11 @@
+[![Build Status](https://travis-ci.org/beneills/cv.svg?branch=gh-pages)](https://travis-ci.org/beneills/cv)
+
 # CV
 _Generate a resumé of your Github activity!  See a live example [here](http://beneills.github.io/cv)._
 
 ## Why
 
-In __five minutes__ you can pick out your best public activity on Github, whether commits, pull requests, stats or conversations, and publish this online.  With more time, you can customize your resumé by changing basic HTML, adding whatever else you want to it.
+In __five minutes__ you can show off your best public activity on Github, whether commits, pull requests, stats or conversations, and publish this online.  This means you can direct people towards the work you want to emphasize.  __With more time__, you can customize your resumé by changing basic HTML, adding whatever else you want to it.
 
 ![Screenshot of resumé](screenshot.png)
 
