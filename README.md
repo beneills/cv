@@ -1,4 +1,4 @@
-# CV [![Build Status](https://travis-ci.org/beneills/cv.svg?branch=gh-pages)](https://travis-ci.org/beneills/cv)
+# CV [![Build Status](https://travis-ci.org/beneills/cv.svg?branch=gh-pages)](https://travis-ci.org/beneills/cv) [![Gratipay](https://img.shields.io/gratipay/beneills.svg)](https://www.gratipay.com/beneills/) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 _Generate a resumé of your Github activity!  See a live example [here](http://beneills.github.io/cv)._
 
