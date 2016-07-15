@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - 2.0
+  - 2.1
+  - 2.2
+  - 2.3
+  - ruby-head
+  - ruby-head-clang
+  - jruby
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: ruby-head-clang
+    - rvm: jruby

@@ -1,0 +1,42 @@
+<!-- This file is used to generate the example CV for the repository. -->
+<!-- Please modify template/index.html instead to customize your own. -->
+
+<% Config::set_username("beneills") %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Github Resumé for <%= Bare::username %></title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+  </head>
+  <body>
+    
+    <h1>Github Resumé for <%= Bare::username %></h1>
+
+    <%= avatar %>
+
+    <h2>Pull Requests</h2>
+      <%= pull_request_overview('lifthrasiir', 'rust-chrono', '81') %>
+      <%= pull_request_overview('uutils', 'coreutils', '914') %>
+
+<!-- 
+    <%= Bare::avatar %>
+
+    <%= Bare::bio %>
+
+    <%= Bare::public_news %>
+
+    <%= Bare::contributions_calendar %>
+
+    <%= Bare::popular_repos %>
+
+    <%= Bare::pull_request_overview('lifthrasiir', 'rust-chrono', '81') %>
+    <%= Bare::pull_request_overview('uutils', 'coreutils', '914') %> -->
+
+
+  </body>
+</html>
