@@ -17,7 +17,7 @@ git clone https://github.com/USERNAME/cv
 cd cv
 # apt-get install phantomjs or brew install phantomjs
 bundle install
-edit templates/index.html # or use the default
+edit templates/index.html # set your username
 bundle exec rake
 # use `bundle exec rake light` to skip downloading anything
 open index.html
