@@ -27,7 +27,7 @@ h2 {
 
 /* wraps calendar and annotation */
 #introduction {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 /* give header octicon an interesting purple colour */
@@ -55,10 +55,16 @@ img.pretty {
 /* test associated with an example above */
 .annotation {
   display: inline-block;
+  margin-bottom: 30px;
   font-style: italic;
 }
 
 /* wrap text to make the annotation narrow */
 .annotation.narrow {
   width: 700px;
+}
+
+/* wrap text to make the annotation really narrow */
+.annotation.really-narrow {
+  width: 500px;
 }
