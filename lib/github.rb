@@ -41,6 +41,13 @@ class Github
     [page, image]
   end
 
+  def commit_message(owner, repo, sha)
+    page = commit_page owner, repo, sha
+    image = grab page, '.full-commit', Internal::unique_id('commit-message', owner, repo, sha)
+    
+    [page, image]
+  end
+  
   def issue_first_comment(owner, repo, id)
     page = issue_page owner, repo, id
     image = grab page, '.timeline-comment-wrapper', Internal::unique_id('issue-first-comment', owner, repo, id)
@@ -100,8 +107,16 @@ class Github
     filename
   end
   
+  def page(resource)
+    "https://github.com#{resource}"
+  end
+  
+  def commit_page(owner, repo, sha)
+    page "/#{owner}/#{repo}/commit/#{sha}"
+  end
+  
   def issue_page(owner, repo, id)
-    "https://github.com/#{owner}/#{repo}/issues/#{id}"
+    page "/#{owner}/#{repo}/issues/#{id}"
   end
 
   def profile_repositiories_page
@@ -113,10 +128,10 @@ class Github
   end
   
   def project_page(name)
-    "https://github.com/#{username}/#{name}"
+    page "/#{username}/#{name}"
   end
   
   def pull_request_page(owner, repo, id)
-    "https://github.com/#{owner}/#{repo}/pull/#{id}"
+    page "/#{owner}/#{repo}/pull/#{id}"
   end
 end

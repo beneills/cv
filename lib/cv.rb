@@ -50,6 +50,13 @@ module Bare
     
     Internal::img 'bio', src, :link => page, :classes => classes
   end
+
+  def self.commit_message(owner, repo, sha, classes=[])
+    id = Internal::unique_id 'commit-message', owner, repo, sha
+    page, src = $github.commit_message owner, repo, sha
+    
+    Internal::img id, src, :link => page, :classes => classes
+  end
   
   def self.contributions_calendar(classes=[])
     src = $github.contributions_calendar
@@ -102,6 +109,10 @@ end
 
 def bio
   Bare::bio [PRETTY_ELEMENT]
+end
+
+def commit_message(owner, repo, sha)
+  Bare::commit_message(owner, repo, sha, [PRETTY_ELEMENT])
 end
 
 def contributions_calendar
