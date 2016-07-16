@@ -58,12 +58,40 @@ h2 {
 
 /* wraps calendar and annotation */
 #introduction {
+  margin-top: 50px;
   margin-bottom: 20px;
+}
+
+/* get rid of margins inside introduction */
+#introduction .image {
+  margin-top: 0;
 }
 
 /* make the annotation narrower */
 #introduction .annotation {
-  width: 700px;
+  width: 500px;
+}
+
+#introduction #left {
+  float: left;
+  margin-right: 30px;
+}
+
+@media (min-width: 1000px) {
+  #introduction #left {
+    margin-right: 100px;
+    padding-right: 100px;
+    border-right: 1px solid #CCC;
+  }
+}
+
+#introduction #left #avatar {
+  width: 200px;
+}
+
+
+#introduction #right {
+  float: left;
 }
 
 /* give header octicon an interesting purple colour */
@@ -79,12 +107,11 @@ h1 .octicon {
 /* small calendar with ample space */
 #contributions_calendar {
   width: 500px;
-  margin-top: 30px;
   margin-bottom: 10px;
 }
 
 /* TODO temporarily make all pretty images uniformly smaller */
-img.pretty {
+.column img.pretty {
   width: 100%;
 }
 

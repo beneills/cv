@@ -27,12 +27,20 @@
       </h1>
 
       <div id="introduction">
-        <%= Bare::contributions_calendar %>
-        <br>
-        <span class="annotation">
-          I contribute to several open source projects on Github, some of my own projects and to private Bitbucket repositories.
-          Before this year, my employment restricted how much I could contribute.
-        </span>
+        <div id="left">
+          <%= Bare::avatar %>
+        </div>
+        
+        <div id="right">
+          <%= Bare::contributions_calendar %>
+          <br>
+          <span class="annotation">
+            I contribute to several open source projects on Github, some of my own projects and to private Bitbucket repositories.
+            Before this year, my employment restricted how much I could contribute.
+          </span>
+        </div>
+        
+        <div class="clear"></div>
       </div>
       
       <div class="column">

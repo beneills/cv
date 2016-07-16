@@ -30,11 +30,19 @@
       </h1>
 
       <div id="introduction">
-        <%= Bare::contributions_calendar %>
-        <br>
-        <span class="annotation">
-          My Github contributions in the past year.
-        </span>
+        <div id="left">
+          <%= Bare::avatar %>
+        </div>
+        
+        <div id="right">
+          <%= Bare::contributions_calendar %>
+          <br>
+          <span class="annotation">
+            My Github contributions in the past year.
+          </span>
+        </div>
+        
+        <div class="clear"></div>
       </div>
       
       <div class="column">
