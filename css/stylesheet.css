@@ -30,6 +30,16 @@ h2 {
   margin-top: 20px;
 }
 
+#footer {
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 1.1em;
+}
+
+#footer iframe {
+  vertical-align: bottom;
+}
+
 /* a column of stuff */
 .column {
   max-width: 400px;
@@ -52,7 +62,7 @@ h2 {
 }
 
 /* make the annotation narrower */
-#introduction.annotation {
+#introduction .annotation {
   width: 700px;
 }
 
