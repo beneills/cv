@@ -1,3 +1,8 @@
+/* big section titles */
+h2 {
+  font-size: 40px;
+}
+
 /* most examples (such as images) - left aligned */
 .pretty {
   padding: 10px;
