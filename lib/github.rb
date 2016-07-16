@@ -2,6 +2,8 @@ require 'capybara'
 require 'capybara/poltergeist'
 require 'capybara/dsl'
 
+require_relative 'cv'
+
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, :js_errors => false)
 end
@@ -39,6 +41,13 @@ class Github
     [page, image]
   end
 
+  def issue_first_comment(owner, repo, id)
+    page = issue_page owner, repo, id
+    image = grab page, '.timeline-comment-wrapper', Internal::unique_id('issue-first-comment', owner, repo, id)
+    
+    [page, image]
+  end
+  
   def popular_repos
     page = profile_page
     image = grab page, '.popular-repos', 'popular-repos'
@@ -55,7 +64,7 @@ class Github
   
   def pull_request_overview(owner, repo, id)
     page = pull_request_page(owner, repo, id)
-    image = grab page, '#partial-discussion-header', 'pull-request-overview'
+    image = grab page, '#partial-discussion-header', Internal::unique_id('pull-request-overview', owner, repo, id)
     
     [page, image]
   end
@@ -85,6 +94,10 @@ class Github
     end
     
     filename
+  end
+  
+  def issue_page(owner, repo, id)
+    "https://github.com/#{owner}/#{repo}/issues/#{id}"
   end
   
   def profile_page

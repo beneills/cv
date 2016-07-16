@@ -52,9 +52,16 @@ module Bare
   end
   
   def self.contributions_calendar(classes=[])
-    page, src = $github.contributions_calendar
+    src = $github.contributions_calendar
     
-    Internal::img 'contributions_calendar', src, :link => page, :classes => classes
+    Internal::img 'contributions_calendar', src, :classes => classes
+  end
+
+  def self.issue_first_comment(owner, repo, issue_id, classes=[])
+    id = Internal::unique_id 'issue-first-comment', owner, repo, issue_id
+    page, src = $github.issue_first_comment owner, repo, issue_id
+    
+    Internal::img id, src, :link => page, :classes => classes
   end
 
   def self.popular_repos(classes=[])
@@ -91,6 +98,10 @@ end
 
 def contributions_calendar
   Bare::contributions_calendar [PRETTY_ELEMENT]
+end
+
+def issue_first_comment(owner, repo, issue_id)
+  Bare::issue_first_comment(owner, repo, issue_id, [PRETTY_ELEMENT])
 end
 
 def popular_repos
