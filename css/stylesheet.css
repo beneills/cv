@@ -1,6 +1,39 @@
+/* most examples (such as images) - left aligned */
 .pretty {
   padding: 10px;
-  margin: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 1px solid #AAA;
   border-radius: 5px;
+}
+
+/* examples which need not align to the left */
+.pretty.non-aligned {
+  margin: 10px;
+}
+
+/* wraps all content */
+#container {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+
+/* give header octicon the same colour as the text */
+h1 .octicon {
+  fill: rgb(51, 51, 51)
+}
+
+/* small calendar with ample space */
+#contributions_calendar {
+  width: 500px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+}
+
+/* TODO temporarily make all pretty images uniformly smaller */
+img.pretty {
+  width: 500px;
 }
