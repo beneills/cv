@@ -30,6 +30,8 @@ end
 
 module Config
   def self.set_username(name)
+    raise 'please set your username at the top of index.html' if 'YOUR_USERNAME' == name
+
     $github.set_username(name)
   end
 end
