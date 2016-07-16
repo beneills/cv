@@ -85,8 +85,10 @@ h2 {
   }
 }
 
+/* make avatar into a circle */
 #introduction #left #avatar {
   width: 200px;
+  border-radius: 100px;
 }
 
 
