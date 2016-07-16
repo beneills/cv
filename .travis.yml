@@ -15,5 +15,6 @@ matrix:
 branches:
   only:
   - gh-pages
+  - development
 
 script: bundle exec rake test
