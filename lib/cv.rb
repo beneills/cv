@@ -88,6 +88,14 @@ end
 # Pretty convenience methods
 #
 
+def username_link
+  "<a href=\"#{profile_url}\">@#{Bare::username}</a>"
+end
+
+def profile_url
+  $github.profile_page
+end
+
 def avatar
   Bare::avatar [PRETTY_ELEMENT]
 end

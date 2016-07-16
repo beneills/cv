@@ -20,9 +20,14 @@
   margin-top: 50px;
 }
 
-/* give header octicon the same colour as the text */
+/* give header octicon an interesting purple colour */
 h1 .octicon {
-  fill: rgb(51, 51, 51)
+  fill: #4d02b5;
+}
+
+/* prevent ugly underlining */
+#octicon-profile-link {
+  text-decoration: none;
 }
 
 /* small calendar with ample space */

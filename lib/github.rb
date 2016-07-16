@@ -75,6 +75,10 @@ class Github
     @username
   end
 
+  def profile_page
+    "https://github.com/#{username}"
+  end
+  
   private
   
   def images_directory
@@ -98,10 +102,6 @@ class Github
   
   def issue_page(owner, repo, id)
     "https://github.com/#{owner}/#{repo}/issues/#{id}"
-  end
-  
-  def profile_page
-    "https://github.com/#{username}"
   end
 
   def profile_repositiories_page
