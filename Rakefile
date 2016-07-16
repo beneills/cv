@@ -1,6 +1,6 @@
 task default: %w[generate]
 
-# alias
+# alias for generate without download
 task :light => [:generate_light]
 
 task :remove_index do
@@ -22,7 +22,7 @@ task :check do
 end
 
 task :erb, [:env, :template] do |t, args|
-  sh "#{args[:env]} erb -r ./lib/cv.rb #{args[:template]} > index.html"
+  sh "#{args[:env]} bundle exec erb -r ./lib/cv.rb #{args[:template]} > index.html"
 end
 
 task :generate => [:check, :clean, :mkdirs] do

@@ -18,7 +18,8 @@ cd cv
 # apt-get install phantomjs or brew install phantomjs
 bundle install
 edit templates/index.html # or use the default
-rake # or `rake light` to skip downloading anything
+bundle exec rake
+# use `bundle exec rake light` to skip downloading anything
 open index.html
 ```
 
@@ -36,8 +37,8 @@ If you manage to get a job using this, you should [give](https://www.gratipay.co
  - Create or take ownership of an issue
  - Fork _gh-pages_ branch
  - Write code
- - `rake test`
- - `rake release`
+ - `bundle exec rake test`
+ - `bundle exec rake release`
  - Commit [with a reasonable message](http://chris.beams.io/posts/git-commit/)
  - Push and possibly run [Travis](travis-ci.org/) on your fork
  - Submit a pull request
