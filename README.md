@@ -35,10 +35,9 @@ If you manage to get a job using this, you should [give](https://www.gratipay.co
 ## Contributing
 
  - Create or take ownership of an issue
- - Fork _gh-pages_ branch
+ - Fork _development_ branch
  - Write code
  - `bundle exec rake test`
  - `bundle exec rake release`
- - Commit [with a reasonable message](http://chris.beams.io/posts/git-commit/)
- - Push and possibly run [Travis](travis-ci.org/) on your fork
+ - Commit [with a reasonable message](http://chris.beams.io/posts/git-commit/) and push
  - Submit a pull request
