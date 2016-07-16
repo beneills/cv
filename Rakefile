@@ -1,5 +1,8 @@
 task default: %w[generate]
 
+# alias
+task :light => [:generate_light]
+
 task :remove_index do
   sh 'rm -f index.html'
 end

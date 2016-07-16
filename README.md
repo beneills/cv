@@ -18,7 +18,7 @@ cd cv
 # apt-get install phantomjs or brew install phantomjs
 bundle install
 edit templates/index.html # or use the default
-rake
+rake # or `rake light` to skip downloading anything
 open index.html
 ```
 
