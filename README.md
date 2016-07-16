@@ -29,6 +29,7 @@ open index.html
 git commit -am 'Customize my resumé' && git push
 open http://USERNAME.github.io/cv
 ```
+If you manage to get a job using this, you should [give](https://www.gratipay.com/beneills/) me some money...
 
 ## Contributing
 
