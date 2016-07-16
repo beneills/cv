@@ -28,33 +28,43 @@
       <div id="introduction">
         <%= Bare::contributions_calendar %>
         <br>
-        <span class="annotation narrow">
+        <span class="annotation">
           I contribute to several open source projects on Github, some of my own projects and to private Bitbucket repositories.
           Before this year, my employment restricted how much I could contribute.
         </span>
       </div>
       
-      <h2>Collaboration</h2>
+      <div class="column">
+        <h2>Collaboration</h2>
+
         <%= issue_first_comment('teampoltergeist', 'poltergeist', '794') %>
         <br>
-        <span class="annotation really-narrow">
+        <span class="annotation">
           This is an example of an issue I submitted to <a href="https://github.com/teampoltergeist/poltergeist">poltergeist</a>,
           because it lacked a feature I needed for <a href="https://github.com/beneills/cv">my own project</a>.
         </span>
+      </div>
 
-      <h2>Communication</h2>
-      <%= commit_message('beneills', 'cv', 'a59f2b4cabf9940f3d00d1a6f4b72646c56ea495') %>
-      <br>
-      <span class="annotation really-narrow">
-        This is the first commit for this cv project.
-      </span>
+      <div class="column">
+        <h2>Communication</h2>
 
-      <h2>Pull Requests</h2>
+        <%= commit_message('beneills', 'cv', 'a59f2b4cabf9940f3d00d1a6f4b72646c56ea495') %>
+        <br>
+        <span class="annotation">
+          This is the first commit for this cv project.
+        </span>
+      </div>
+
+      <div class="column last">
+        <h2>Contribution</h2>
+
          <%= pull_request_overview('lifthrasiir', 'rust-chrono', '81') %>
          <br>
          <%= pull_request_overview('uutils', 'coreutils', '914') %>
-
+      </div>
+       
     </div>
 
+    <div class="clear"></div>
   </body>
 </html>
