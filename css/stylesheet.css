@@ -20,6 +20,11 @@
   margin-top: 50px;
 }
 
+/* wraps calendar and annotation */
+#introduction {
+  margin-bottom: 50px;
+}
+
 /* give header octicon an interesting purple colour */
 h1 .octicon {
   fill: #4d02b5;
@@ -34,11 +39,21 @@ h1 .octicon {
 #contributions_calendar {
   width: 500px;
   margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 0px;
+  margin-bottom: 10px;
 }
 
 /* TODO temporarily make all pretty images uniformly smaller */
 img.pretty {
   width: 500px;
+}
+
+/* test associated with an example above */
+.annotation {
+  display: inline-block;
+  font-style: italic;
+}
+
+/* wrap text to make the annotation narrow */
+.annotation.narrow {
+  width: 700px;
 }
