@@ -12,9 +12,8 @@ Capybara.javascript_driver = :poltergeist
 Capybara.run_server = false
 
 class Github
-  def initialize(no_grab=false, example=false)
+  def initialize(no_grab=false)
     @no_grab = no_grab
-    @example = example
     @session = Capybara::Session.new(:poltergeist)
     @visiting = nil
   end
@@ -89,11 +88,7 @@ class Github
   private
   
   def images_directory
-    if @example
-      "example_images"
-    else
-      "images"
-    end
+    "images"
   end
   
   def grab(url, selector, resource)

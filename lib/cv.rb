@@ -1,8 +1,7 @@
 require_relative 'github.rb'
 
 no_grab = ! ENV['CV_NO_GRAB'].nil?
-example = ! ENV['CV_EXAMPLE'].nil?
-$github = Github.new(no_grab, example)
+$github = Github.new(no_grab)
 
 PRETTY_ELEMENT = 'pretty'
 

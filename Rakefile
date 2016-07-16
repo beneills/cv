@@ -21,13 +21,16 @@ task :check do
   puts "done"
 end
 
-task :erb, [:env, :template] do |t, args|
-  sh "#{args[:env]} erb -r ./lib/cv.rb #{args[:template]} > index.html"
+task :erb, [:env, :template, :output] do |t, args|
+  output = args[:output] || "index.html"
+  env = args[:env] || ''
+  
+  sh "#{env} erb -r ./lib/cv.rb #{args[:template]} > #{output}"
 end
 
 task :generate => [:check, :clean, :mkdirs] do
   # execute without invoking dependencies, and immediately reenable
-  Rake::Task[:erb].execute :env => '', :template => 'template/index.html'
+  Rake::Task[:erb].execute :template => 'template/index.html'
 end
 
 task :generate_light => [:remove_index, :mkdirs] do
@@ -36,23 +39,31 @@ task :generate_light => [:remove_index, :mkdirs] do
 end
 
 task :generate_test => [:remove_index, :mkdirs] do
-  # execute without invoking dependencies, and immediately reenable
-  Rake::Task[:erb].execute :env => 'CV_NO_GRAB=1', :template => '/dev/null'
+  # first let's replace the placeholder usernmae string
+  require 'tempfile'
+  tmp = Tempfile.new('index.html')
+  sh "sed 's/YOUR_USERNAME/torvalds/' template/example.html > #{tmp.path}"
+
+  # then execute without invoking dependencies, and immediately reenable
+  Rake::Task[:erb].execute :env => 'CV_NO_GRAB=1', :template => tmp.path, :output => '/dev/null'
+
+  # and clean up
+  File.delete tmp.path
 end
 
 task :example => [:check, :clean, :mkdirs] do
   # execute without invoking dependencies, and immediately reenable
-  Rake::Task[:erb].execute :env => 'CV_EXAMPLE=1', :template => 'template/example.html'
+  Rake::Task[:erb].execute :template => 'template/example.html'
 end
 
 task :example_light => [:remove_index, :mkdirs] do
   # execute without invoking dependencies, and immediately reenable
-  Rake::Task[:erb].execute :env => 'CV_EXAMPLE=1 CV_NO_GRAB=1', :template => 'template/example.html'
+  Rake::Task[:erb].execute :env => 'CV_NO_GRAB=1', :template => 'template/example.html'
 end
 
 task :example_test => [:remove_index, :mkdirs] do
-  # execute without invoking dependencies, and immediately reenable
-  Rake::Task[:erb].execute :env => 'CV_EXAMPLE=1 CV_NO_GRAB=1', :template => '/dev/null'
+    # execute without invoking dependencies, and immediately reenable
+    Rake::Task[:erb].execute :env => 'CV_NO_GRAB=1', :template => 'template/example.html', :output => '/dev/null'
 end
 
 task :test => [:example_test, :generate_test] do |t|
